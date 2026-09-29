@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cone Privacy Policy</title>
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#F7F6FA;
+    --border:#E4E2EA; --accent:#5B45A8; --accent-tint:#EFEBFA;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#F3F1F8; --ink-muted:#A9A5B4; --bg:#14121A; --surface:#1E1B26;
+      --border:#332F3D; --accent:#B8A7F0; --accent-tint:#2D2645;
+    }
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:"Public Sans",-apple-system,system-ui,sans-serif; }
+  .wrap{ max-width:700px; margin:0 auto; padding:0 20px 80px; }
+  header.top{ position:sticky; top:0; background:var(--bg);
+    border-bottom:1px solid var(--border); padding:16px 20px; margin-bottom:8px; z-index:10; }
+  header.top .row{ max-width:700px; margin:0 auto; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  header.top .brand{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:15px; letter-spacing:.01em; }
+  header.top .updated{ font-size:12px; color:var(--ink-muted); }
+  h1{ font-family:"Sora",-apple-system,sans-serif; font-size:clamp(26px,5vw,34px); line-height:1.15;
+    letter-spacing:-0.01em; margin:28px 0 6px; }
+  .lede{ color:var(--ink-muted); font-size:15px; margin:0 0 32px; max-width:60ch; }
+  nav.toc{ background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:16px 20px; margin-bottom:32px; }
+  nav.toc .label{ font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-muted); margin-bottom:10px; }
+  nav.toc ol{ margin:0; padding:0 0 0 1.2em; columns:2; column-gap:24px; font-size:13.5px; }
+  nav.toc li{ margin-bottom:6px; }
+  nav.toc a{ color:var(--ink); text-decoration:none; }
+  nav.toc a:hover{ color:var(--accent); }
+  section{ margin:36px 0; scroll-margin-top:70px; }
+  h2{ font-family:"Sora",-apple-system,sans-serif; font-size:19px; letter-spacing:-0.005em;
+    margin:0 0 12px; display:flex; gap:10px; align-items:baseline; }
+  h2 .num{ color:var(--accent); font-variant-numeric:tabular-nums; }
+  p{ font-size:14.5px; line-height:1.7; max-width:65ch; margin:0 0 14px; }
+  ul{ font-size:14.5px; line-height:1.7; max-width:65ch; padding-left:1.3em; margin:0 0 14px; }
+  li{ margin-bottom:6px; }
+  strong{ font-weight:650; }
+  .callout{ background:var(--accent-tint); border-radius:10px; padding:14px 16px; font-size:13.5px;
+    color:var(--ink); max-width:65ch; }
+  .callout a{ color:var(--accent); font-weight:600; }
+  a{ color:var(--accent); }
+  footer{ margin-top:56px; padding-top:20px; border-top:1px solid var(--border); font-size:12.5px; color:var(--ink-muted); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="row">
+    <span class="brand">Cone</span>
+    <span class="updated">Last updated September 28, 2026</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Privacy Policy</h1>
+  <p class="lede">Cone helps people find affordable vets nearby and see real prices other pet owners have paid. This page explains what we collect, why, and how you can delete it.</p>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="label">On this page</div>
+    <ol>
+      <li><a href="#collect">Information we collect</a></li>
+      <li><a href="#use">How we use it</a></li>
+      <li><a href="#public">What's public vs. private</a></li>
+      <li><a href="#thirdparty">Third-party services</a></li>
+      <li><a href="#retention">Retention &amp; deletion</a></li>
+      <li><a href="#kids">Children's privacy</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section id="collect">
+    <h2><span class="num">1.</span> Information we collect</h2>
+    <p><strong>Account information.</strong> When you create a Cone account, we collect your email address and password. Your password is handled entirely by our authentication provider (Supabase) and is never visible to us in plain text.</p>
+    <p><strong>Pet profile.</strong> Your pet's name, species, gender, breed, birth date, weight, and an optional photo, if you choose to add one.</p>
+    <p><strong>Receipts you submit.</strong> When you log a price — the clinic name, procedure, amount paid, your pet's species, the date, and an optional photo of the receipt.</p>
+    <p><strong>Location.</strong> With your permission, your device's location, used only to show distance to nearby vets and sort results by how close they are. You can decline this and still use Cone — you just won't get distance-based sorting.</p>
+    <p><strong>Camera and photo library.</strong> Used only when you actively choose to take or select a photo for your pet's profile or a receipt. We never access these without your action.</p>
+  </section>
+
+  <section id="use">
+    <h2><span class="num">2.</span> How we use it</h2>
+    <ul>
+      <li>To create and secure your account.</li>
+      <li>To show your pet's profile back to you.</li>
+      <li>To show nearby vets, sorted by distance when location is available.</li>
+      <li>To display crowdsourced pricing so other pet owners can see what procedures typically cost at a given clinic.</li>
+    </ul>
+    <p>We do not sell your personal information, and we do not use your data for advertising.</p>
+  </section>
+
+  <section id="public">
+    <h2><span class="num">3.</span> What's public vs. private</h2>
+    <p>Cone's core idea is price transparency, so some information is intentionally visible to other users:</p>
+    <ul>
+      <li><strong>Public:</strong> the clinic name, procedure, price, and pet species from a receipt you submit. This is what lets other pet owners compare prices.</li>
+      <li><strong>Private, visible only to you:</strong> your pet's profile and photo, your email address, and any photo you attach to a receipt. Other users never see your receipt photo or your pet's photo.</li>
+    </ul>
+  </section>
+
+  <section id="thirdparty">
+    <h2><span class="num">4.</span> Third-party services</h2>
+    <p>Cone is built on <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, which provides our account system, database, and photo storage. Supabase processes data on our behalf and does not use it for its own purposes. We don't use any advertising or analytics networks.</p>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">5.</span> Retention &amp; deletion</h2>
+    <p>We keep your information for as long as your account is active. You can permanently delete your account, right in the app, at any time:</p>
+    <p class="callout"><strong>Profile → Settings → Account → Delete Account.</strong> This immediately and permanently removes your pet profile, your receipts, and your account itself. This cannot be undone.</p>
+  </section>
+
+  <section id="kids">
+    <h2><span class="num">6.</span> Children's privacy</h2>
+    <p>Cone is not directed at children under 13, and we do not knowingly collect information from anyone under 13.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">7.</span> Changes to this policy</h2>
+    <p>If we make material changes to this policy, we'll update the date at the top of this page.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">8.</span> Contact us</h2>
+    <p>Questions about this policy or your data? Reach us at <a href="mailto:YOUR-SUPPORT-EMAIL@example.com">YOUR-SUPPORT-EMAIL@example.com</a>.</p>
+  </section>
+
+  <footer>Cone Privacy Policy — a starting draft. Review before relying on it for a commercial launch.</footer>
+</div>
+</body>
+</html>
