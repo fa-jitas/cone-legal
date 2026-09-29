@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email confirmed — Cone</title>
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#F7F6FA;
+    --border:#E4E2EA; --accent:#5B45A8; --accent-tint:#EFEBFA;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#F3F1F8; --ink-muted:#A9A5B4; --bg:#14121A; --surface:#1E1B26;
+      --border:#332F3D; --accent:#B8A7F0; --accent-tint:#2D2645;
+    }
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:"Public Sans",-apple-system,system-ui,sans-serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+  .card{ width:100%; max-width:360px; text-align:center; }
+  .brand{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:15px; color:var(--ink-muted);
+    margin-bottom:22px; letter-spacing:.01em; }
+  .icon{ width:56px; height:56px; border-radius:50%; background:var(--accent-tint); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 18px; font-size:28px; }
+  h1{ font-family:"Sora",-apple-system,sans-serif; font-size:22px; letter-spacing:-0.01em; margin:0 0 8px; }
+  p{ color:var(--ink-muted); font-size:14px; line-height:1.6; margin:0; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">Cone</div>
+    <div class="icon">✓</div>
+    <h1>Email confirmed</h1>
+    <p>Your account is ready. Head back to the Cone app and log in.</p>
+  </div>
+</body>
+</html>
