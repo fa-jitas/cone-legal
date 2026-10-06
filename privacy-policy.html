@@ -4,19 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cone Privacy Policy</title>
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* Matches cone/Theme.swift exactly — ink, ink-muted, border, accent
+     (brandStrong), accent-tint (brandTint), surface (surfaceMuted). The
+     app itself has no dark mode (flat hardcoded colors), so neither does
+     this site — a dark variant here wouldn't actually be "the app's
+     color scheme," it'd be a different one the app doesn't have. */
   :root{
-    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#F7F6FA;
+    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#ECEBF0;
     --border:#E4E2EA; --accent:#5B45A8; --accent-tint:#EFEBFA;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --ink:#F3F1F8; --ink-muted:#A9A5B4; --bg:#14121A; --surface:#1E1B26;
-      --border:#332F3D; --accent:#B8A7F0; --accent-tint:#2D2645;
-    }
   }
   *{ box-sizing:border-box; }
   body{ margin:0; background:var(--bg); color:var(--ink); font-family:"Public Sans",-apple-system,system-ui,sans-serif; }

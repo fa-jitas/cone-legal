@@ -9,11 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* Always white/light — no dark-mode variant. The marketing page keeps
-     one consistent brand presentation regardless of system theme (unlike
-     the legal pages, which do follow prefers-color-scheme). */
+  /* Matches cone/Theme.swift exactly — ink, ink-muted, border, accent
+     (brandStrong), accent-tint (brandTint), surface (surfaceMuted).
+     Always light — no dark-mode variant, since the app itself has none
+     either (flat hardcoded colors, no dark-mode handling). */
   :root{
-    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#F7F6FA;
+    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#ECEBF0;
     --border:#E4E2EA; --accent:#5B45A8; --accent-tint:#EFEBFA;
   }
   *{ box-sizing:border-box; }
