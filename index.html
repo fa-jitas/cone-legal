@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cone — Affordable Vet Care</title>
+<meta name="description" content="Cone helps people find affordable vets nearby and see real prices other pet owners have paid.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#F7F6FA;
+    --border:#E4E2EA; --accent:#5B45A8; --accent-tint:#EFEBFA;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#F3F1F8; --ink-muted:#A9A5B4; --bg:#14121A; --surface:#1E1B26;
+      --border:#332F3D; --accent:#B8A7F0; --accent-tint:#2D2645;
+    }
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:"Public Sans",-apple-system,system-ui,sans-serif; }
+  .wrap{ max-width:700px; margin:0 auto; padding:0 20px 80px; }
+  header.top{ position:sticky; top:0; background:var(--bg);
+    border-bottom:1px solid var(--border); padding:16px 20px; margin-bottom:8px; z-index:10; }
+  header.top .row{ max-width:700px; margin:0 auto; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  header.top .brand{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:15px; letter-spacing:.01em; color:var(--ink); text-decoration:none; }
+  header.top nav{ display:flex; gap:18px; }
+  header.top nav a{ font-size:13px; color:var(--ink-muted); text-decoration:none; }
+  header.top nav a:hover{ color:var(--accent); }
+  .hero{ padding:64px 0 8px; }
+  .kicker{ font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+  h1{ font-family:"Sora",-apple-system,sans-serif; font-size:clamp(32px,6vw,46px); line-height:1.1;
+    letter-spacing:-0.01em; margin:0 0 16px; }
+  .lede{ color:var(--ink-muted); font-size:17px; line-height:1.6; margin:0 0 32px; max-width:52ch; }
+  .pill{ display:inline-flex; align-items:center; gap:8px; background:var(--accent-tint); color:var(--accent);
+    border-radius:999px; padding:9px 16px; font-size:13.5px; font-weight:600; margin-bottom:48px; }
+  .pill .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); }
+  .cards{ display:grid; gap:14px; margin-bottom:56px; }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; }
+  .card h2{ font-family:"Sora",-apple-system,sans-serif; font-size:16px; margin:0 0 6px; }
+  .card p{ font-size:14px; line-height:1.6; color:var(--ink-muted); margin:0; }
+  footer{ padding-top:24px; border-top:1px solid var(--border); display:flex; gap:20px; flex-wrap:wrap;
+    font-size:13px; }
+  footer a{ color:var(--ink-muted); text-decoration:none; }
+  footer a:hover{ color:var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="row">
+    <a class="brand" href="/">Cone</a>
+    <nav>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms-of-service.html">Terms</a>
+      <a href="mailto:cone.vetfinder@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="kicker">Vet care, without the guessing</p>
+    <h1>Cone</h1>
+    <p class="lede">Cone helps people find affordable vets nearby and see real prices other pet owners have paid — so there are no surprises at checkout.</p>
+    <span class="pill"><span class="dot"></span>Coming soon to the App Store</span>
+
+    <div class="cards">
+      <div class="card">
+        <h2>Real prices, not estimates</h2>
+        <p>Every price comes from a receipt someone actually paid — reviewed before it ever shows up publicly.</p>
+      </div>
+      <div class="card">
+        <h2>Find a vet near you</h2>
+        <p>Search and compare nearby clinics, see hours, ratings, and what people have paid for common procedures.</p>
+      </div>
+      <div class="card">
+        <h2>Help the next pet owner</h2>
+        <p>Upload your own receipt in seconds — scan it, or enter it manually — to help others budget for their visit.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="/terms-of-service.html">Terms of Service</a>
+    <a href="mailto:cone.vetfinder@gmail.com">cone.vetfinder@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>
