@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App — Cone</title>
+<meta name="description" content="Vet care, with less guesswork — see how Cone works.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  .app-hero{ display:flex; min-height:560px; }
+  .app-hero-photo{ flex:1; min-width:280px; position:relative; }
+  .app-hero-photo img{ width:100%; height:100%; object-fit:cover; }
+  .app-hero-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(225deg, rgba(26,16,48,.75) 20%, rgba(26,16,48,0) 70%); }
+  .app-hero-copy{ flex:1; min-width:280px; display:flex; flex-direction:column; justify-content:center; gap:28px; padding:64px 80px; }
+  .app-hero-copy h1{ font-size:clamp(32px,5vw,54px); line-height:1.08; font-weight:700; margin:0; }
+  .app-hero-copy .lede{ color:var(--ink-muted); font-size:17px; line-height:1.65; margin:0; max-width:46ch; }
+
+  .onboard-band{ background:var(--purple); display:flex; padding:48px 80px; flex-wrap:wrap; gap:0; }
+  .onboard-step{ flex:1; min-width:200px; display:flex; flex-direction:column; gap:12px; padding:0 32px; border-left:1px solid var(--purple-light); }
+  .onboard-step:first-child{ border-left:none; padding-left:0; }
+  .onboard-step .ic{ background:var(--purple-light); border-radius:12px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
+  .onboard-step .ic img{ width:22px; height:22px; filter:brightness(0) invert(1); }
+  .onboard-step p{ color:#fff; font-weight:700; font-size:17px; margin:0; }
+
+  .feat-row{ display:flex; gap:80px; align-items:center; padding:88px 80px; flex-wrap:wrap; }
+  .feat-row.alt{ background:var(--tint2); }
+  .feat-row.reverse{ flex-direction:row-reverse; }
+  .feat-copy{ flex:1; min-width:280px; display:flex; flex-direction:column; gap:22px; }
+  .feat-copy h2{ font-size:clamp(32px,5vw,46px); font-weight:700; margin:0; }
+  .feat-copy p{ color:var(--ink-muted); font-size:16px; line-height:1.7; margin:0; }
+  .feat-copy .note{ display:flex; align-items:center; gap:10px; color:var(--purple-dark); font-size:14px; }
+  .feat-copy .note img{ width:18px; height:18px; }
+
+  .phone{ background:#fff; border:5px solid var(--border); border-radius:40px; padding:18px; width:280px; max-width:100%;
+    box-shadow:0 24px 48px rgba(53,35,74,.12); display:flex; flex-direction:column; gap:14px; flex-shrink:0; }
+  .phone .hdr{ display:flex; justify-content:space-between; align-items:center; }
+  .phone .hdr .wm{ font-family:"Sora",sans-serif; font-weight:700; color:var(--purple); font-size:17px; }
+  .phone .hdr img{ width:20px; height:20px; }
+  .phone h4{ font-size:18px; margin:0; }
+  .phone .loc{ background:var(--surface-muted); border-radius:12px; height:36px; display:flex; align-items:center; gap:8px; padding:0 10px; font-size:11px; }
+  .phone .loc img{ width:14px; height:14px; }
+  .phone .card{ border:1px solid var(--border); border-radius:14px; padding:14px; }
+  .phone .card.hl{ border-color:var(--purple); }
+  .phone .row{ display:flex; gap:10px; align-items:center; margin-bottom:10px; }
+  .phone .row .sym{ background:var(--tint); border-radius:10px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .phone .row .sym img{ width:17px; height:17px; }
+  .phone .row p{ margin:0; font-size:12px; }
+  .phone .row .meta{ color:var(--ink-muted); font-size:9px; }
+  .phone hr{ border:none; border-top:1px solid var(--border); margin:0 0 10px; }
+  .phone .pr{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .phone .pr .p1{ font-size:10px; color:var(--ink-muted); margin:0; }
+  .phone .pr .p2{ font-size:9px; color:var(--purple); margin:0; }
+  .phone .pr .amt{ font-size:22px; font-weight:600; margin:0; }
+  .phone .fine{ color:var(--ink-muted); font-size:8.5px; }
+
+  .receipt-wrap{ position:relative; width:420px; max-width:100%; height:300px; flex-shrink:0; }
+  .sample-receipt{ position:absolute; left:0; top:0; background:#fff; border-radius:20px; padding:26px; width:220px; box-shadow:0 16px 40px rgba(53,35,74,.12); transform:rotate(-5deg); display:flex; flex-direction:column; gap:14px; }
+  .sample-receipt img{ width:26px; height:26px; }
+  .sample-receipt p{ margin:0; }
+  .sample-receipt hr{ width:100%; border:none; border-top:1px solid var(--border); margin:0; }
+  .sample-receipt .amt{ font-size:28px; font-weight:700; margin:0; }
+  .sample-receipt .fine{ color:var(--ink-muted); font-size:9px; }
+  .review-float{ position:absolute; right:0; top:120px; background:#fff; border-radius:20px; padding:24px; width:250px; box-shadow:0 16px 40px rgba(53,35,74,.12); display:flex; flex-direction:column; gap:14px; }
+  .review-float img{ width:26px; height:26px; }
+  .review-float p{ margin:0; font-size:12px; color:var(--ink-muted); line-height:1.5; }
+  .review-float .t{ font-size:16px; color:var(--ink); font-weight:500; }
+
+  .share-wrap{ width:430px; max-width:100%; flex-shrink:0; }
+  .share-box{ background:#fff; border-radius:28px; padding:28px; box-shadow:0 24px 48px rgba(53,35,74,.12); display:flex; flex-direction:column; gap:18px; }
+  .share-box .hdr{ display:flex; justify-content:space-between; align-items:center; }
+  .share-box .hdr p{ margin:0; font-size:21px; font-weight:600; }
+  .share-box .hdr img{ width:20px; height:20px; }
+  .opt{ display:flex; align-items:center; gap:12px; border-radius:14px; padding:18px; }
+  .opt.scan{ background:var(--tint); }
+  .opt.manual{ border:1px solid var(--border); }
+  .opt img.ic{ width:20px; height:20px; }
+  .opt .t{ font-size:14px; font-weight:600; color:var(--purple-dark); margin:0; }
+  .opt.manual .t{ color:var(--purple); font-weight:400; flex:1; }
+  .opt .d{ font-size:12px; color:var(--ink-muted); margin:2px 0 0; }
+  .opt .chev{ width:16px; height:16px; margin-left:auto; }
+  .share-status{ display:flex; gap:8px; align-items:center; color:var(--ink-muted); font-size:12px; border-top:1px solid var(--border); padding-top:14px; }
+  .share-status img{ width:16px; height:16px; }
+
+  .trust{ background:var(--tint); padding:64px 80px; display:flex; flex-direction:column; gap:48px; }
+  .trust-hdr{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .trust-hdr h2{ font-size:clamp(26px,4vw,40px); font-weight:700; max-width:700px; margin:0; }
+  .pillars{ display:flex; gap:28px; flex-wrap:wrap; }
+  .pillar{ background:#fff; border-radius:24px; padding:28px; flex:1; min-width:240px; display:flex; flex-direction:column; gap:14px; }
+  .pillar .ic{ background:var(--tint); border-radius:14px; width:48px; height:48px; display:flex; align-items:center; justify-content:center; }
+  .pillar .ic img{ width:24px; height:24px; }
+  .pillar h3{ font-size:19px; margin:0; }
+  .pillar p{ color:var(--ink-muted); font-size:14px; line-height:1.6; margin:0; }
+
+  @media (max-width: 900px){
+    .app-hero{ flex-direction:column; }
+    .app-hero-photo{ height:280px; }
+    .app-hero-copy{ padding:40px 24px; }
+    .onboard-band{ flex-direction:column; gap:24px; padding:32px 24px; }
+    .onboard-step{ border-left:none; padding:0; }
+    .feat-row, .feat-row.reverse{ flex-direction:column; padding:56px 24px; }
+    .trust{ padding:48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="wordmark" href="index.html">cone</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="app.html" class="active">App</a>
+  </div>
+</nav>
+
+<div class="app-hero">
+  <div class="app-hero-photo"><img src="app-hero-photo.png" alt="A vet caring for a dog"></div>
+  <div class="app-hero-copy">
+    <span class="pill"><img class="icon" src="icons/status-dot.svg" alt=""> Coming soon · Bay Area first</span>
+    <h1>Vet care, with less guesswork.</h1>
+    <p class="lede">Find nearby vets, compare what matters and see what other owners actually paid. A clearer way to plan for your pet's care.</p>
+    <a class="btn-primary" href="mailto:cone.vetfinder@gmail.com?subject=Launch%20updates" style="width:fit-content;">Get launch updates <img src="icons/arrow-right.svg" alt=""></a>
+  </div>
+</div>
+
+<div class="onboard-band">
+  <div class="onboard-step"><div class="ic"><img src="icons/map-pin.svg" alt=""></div><p>Find nearby vets</p></div>
+  <div class="onboard-step"><div class="ic"><img src="icons/receipt.svg" alt=""></div><p>See what owners paid</p></div>
+  <div class="onboard-step"><div class="ic"><img src="icons/shield-check.svg" alt=""></div><p>Help the next owner</p></div>
+</div>
+
+<div class="feat-row">
+  <div class="phone">
+    <div class="hdr"><span class="wm">cone</span><img src="icons/paw-print.svg" alt=""></div>
+    <h4>Find care nearby</h4>
+    <div class="loc"><img src="icons/search.svg" alt=""> San Francisco, CA</div>
+    <div class="card hl">
+      <div class="row"><div class="sym"><img src="icons/house-plus.svg" alt=""></div><div><p>Example clinic A</p><p class="meta">0.4 mi · Open now · ★ 4.7</p></div></div>
+      <hr><div class="pr"><div><p class="p1">Wellness exam</p><p class="p2">Receipt-backed price</p></div><p class="amt">$—</p></div>
+    </div>
+    <div class="card">
+      <div class="row"><div class="sym"><img src="icons/house-plus.svg" alt=""></div><div><p>Example clinic B</p><p class="meta">1.1 mi · Open now · ★ 4.5</p></div></div>
+      <hr><div class="pr"><div><p class="p1">Wellness exam</p><p class="p2">Receipt-backed price</p></div><p class="amt">$—</p></div>
+    </div>
+    <p class="fine">Illustrative preview · Example clinics only</p>
+  </div>
+  <div class="feat-copy">
+    <h2>Search</h2>
+    <p>Explore nearby clinics and compare their hours, ratings and prices for common procedures. See your options together, without hopping between tabs.</p>
+  </div>
+</div>
+
+<div class="feat-row alt reverse">
+  <div class="receipt-wrap">
+    <div class="sample-receipt">
+      <img src="icons/paw-print.svg" alt="">
+      <p>A vet visit, recorded.</p>
+      <hr>
+      <p style="font-size:13px; color:var(--ink-muted);">Wellness exam</p>
+      <p class="amt">$—</p>
+      <p class="fine">Sample receipt · No actual price shown</p>
+    </div>
+    <div class="review-float">
+      <img src="icons/shield-check.svg" alt="">
+      <p class="t">Reviewed before it's shared.</p>
+      <p>A paid receipt gives the price its starting point. Review comes before public display.</p>
+    </div>
+  </div>
+  <div class="feat-copy">
+    <h2>Read</h2>
+    <p>Cone's prices come from what pet owners actually paid. Receipts are reviewed before their prices appear publicly, giving you real numbers to help plan for care.</p>
+    <div class="note"><img src="icons/shield-check.svg" alt=""> Receipts reviewed before prices go public</div>
+  </div>
+</div>
+
+<div class="feat-row">
+  <div class="share-wrap">
+    <div class="share-box">
+      <div class="hdr"><p>Share a receipt</p><img src="icons/plus.svg" alt=""></div>
+      <p style="color:var(--ink-muted); font-size:14px; margin:0;">A little care, recorded. Choose how you'd like to add your receipt.</p>
+      <div class="opt scan"><img class="ic" src="icons/scan-line.svg" alt=""><div><p class="t">Scan your receipt</p><p class="d">Start with your vet receipt</p></div><img class="chev" src="icons/chevron-right.svg" alt=""></div>
+      <div class="opt manual"><img class="ic" src="icons/pencil-line.svg" alt=""><p class="t">Enter details manually</p><img class="chev" src="icons/chevron-right.svg" alt=""></div>
+      <div class="share-status"><img src="icons/clock.svg" alt=""> Reviewed before public display</div>
+    </div>
+  </div>
+  <div class="feat-copy">
+    <h2>Upload</h2>
+    <p>Once the vet visit is over, share what you paid. A receipt you already have can help another pet owner budget for the care ahead.</p>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="trust-hdr">
+    <p class="kicker" style="margin:0;">Built on community transparency</p>
+    <h2>Prices that come from real pet owners, like you.</h2>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><div class="ic"><img src="icons/receipt.svg" alt=""></div><h3>Receipt-backed prices</h3><p>Every price comes from a real vet receipt, not an estimate or insurance database. What you see is what an owner actually paid.</p></div>
+    <div class="pillar"><div class="ic"><img src="icons/shield-check.svg" alt=""></div><h3>Reviewed before display</h3><p>Receipts are reviewed before their prices appear publicly. That check happens every time, giving the data a consistent standard before it's shared.</p></div>
+    <div class="pillar"><div class="ic"><img src="icons/paw-print.svg" alt=""></div><h3>Community-powered</h3><p>The more owners share, the more useful cone becomes for everyone. Your receipt today helps the next pet owner budget for the same care tomorrow.</p></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <div class="brand-block">
+      <a class="wordmark" href="index.html">cone</a>
+      <span class="tagline">Vet care, without the guessing.</span>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="app.html" class="active">App</a>
+      <span class="badge"><img src="icons/smartphone.svg" alt="" style="width:16px;height:16px;"> Coming soon to the App Store</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 cone. Made for pets and their people.</span>
+    <span class="legal-links"><a href="terms-of-service.html">Terms of Service</a><span class="sep">|</span><a href="privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+</body>
+</html>

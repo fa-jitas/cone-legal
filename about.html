@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Cone</title>
+<meta name="description" content="Because finding an affordable vet shouldn't be this hard — the story behind Cone.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  .reason{ background:var(--purple-pale); display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; gap:30px; padding:112px 24px 100px; min-height:420px; position:relative; }
+  .reason .kicker{ color:#fff; text-transform:uppercase; font-size:13px; letter-spacing:.04em; margin:0; }
+  .reason h1{ color:var(--purple-dark); font-size:clamp(34px,6vw,76px); line-height:1.1; font-weight:600; margin:0; max-width:1000px; }
+
+  .story{ display:flex; flex-direction:column; gap:100px; padding:100px 80px; }
+  .beat{ display:flex; gap:100px; align-items:center; flex-wrap:wrap; }
+  .beat.reverse{ flex-direction:row-reverse; }
+  .beat img.photo{ width:480px; max-width:100%; height:480px; object-fit:cover; border-radius:4px; flex-shrink:0; }
+  .beat-copy{ flex:1; min-width:280px; display:flex; flex-direction:column; gap:22px; }
+  .beat-copy h2{ font-size:clamp(24px,3vw,34px); font-weight:500; line-height:1.2; margin:0; }
+  .beat-copy p{ font-size:18px; line-height:1.6; margin:0; color:var(--ink); }
+  .beat-copy p.muted{ color:var(--ink-muted); }
+  .beat-copy .accent{ color:var(--purple); font-weight:700; }
+
+  .team{ display:flex; flex-direction:column; align-items:center; gap:48px; padding:64px 24px 96px; text-align:center; }
+  .team-intro{ max-width:680px; display:flex; flex-direction:column; gap:22px; align-items:center; }
+  .team-intro h2{ font-size:clamp(32px,5vw,50px); font-weight:600; margin:0; }
+  .team-intro p{ font-size:19px; color:var(--ink-muted); margin:0; max-width:560px; }
+  .team-grid{ display:flex; gap:36px; flex-wrap:wrap; justify-content:center; }
+  .team-member{ width:300px; display:flex; flex-direction:column; gap:16px; }
+  .team-photo{ background:var(--tint); border:1px solid var(--border); height:340px; display:flex; flex-direction:column;
+    justify-content:space-between; padding:22px; border-radius:4px; }
+  .team-photo img.icon{ width:24px; height:24px; opacity:.6; }
+  .team-photo .rule{ width:40px; height:1px; background:var(--purple); margin-bottom:10px; }
+  .team-photo .label{ color:var(--purple); font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
+  .team-role{ color:var(--ink-muted); font-size:14px; }
+
+  .mission-cta{ background:var(--tint); display:flex; flex-direction:column; align-items:center; gap:28px; text-align:center;
+    padding:96px 24px; }
+  .mission-cta h2{ color:var(--purple); font-size:clamp(32px,6vw,58px); font-weight:600; line-height:1.12; margin:0; max-width:800px; }
+  .mission-cta p{ font-size:19px; line-height:1.6; max-width:650px; margin:0; }
+
+  @media (max-width: 900px){
+    .story{ padding:56px 24px; gap:56px; }
+    .beat, .beat.reverse{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="wordmark" href="index.html">cone</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="app.html">App</a>
+  </div>
+</nav>
+
+<div class="reason">
+  <p class="kicker">Our reason for being</p>
+  <h1>Because finding an affordable vet shouldn't be this hard.</h1>
+</div>
+
+<div class="story">
+  <div class="beat">
+    <img class="photo" src="about-quiet-home.png" alt="A dog resting at home">
+    <div class="beat-copy">
+      <h2>Your pet gets sick. You want to get them care.</h2>
+      <p>Then comes the other question: <span class="accent">How much is this going to cost?</span></p>
+      <p class="muted">You search online, but prices are hard to find. So you start calling vet offices. One says they'll call you back. Another can't give you a price without an exam. Another gives you a number, but you have no idea if it's typical.</p>
+      <p class="muted">Meanwhile, you're waiting — and your pet is still sick.</p>
+    </div>
+  </div>
+
+  <div class="beat reverse">
+    <img class="photo" src="about-everyday.png" alt="Caring for a cat at home">
+    <div class="beat-copy">
+      <h2>For a lot of us, cost matters.</h2>
+      <p class="muted">We're students, families, first-time pet parents, or simply people trying to make everything fit within a budget. Vet visits, tests, medications, and unexpected emergencies add up quickly.</p>
+      <p class="muted">Wanting to know the price doesn't mean you care any less about your pet. <span class="accent">It means you're trying to find a way to get them the care they need.</span></p>
+    </div>
+  </div>
+
+  <div class="beat">
+    <img class="photo" src="about-timespent.png" alt="A dog resting on a couch">
+    <div class="beat-copy">
+      <h2>That's why we built Cone.</h2>
+      <p>Cone is a community-powered place to find and compare what people are paying for veterinary care, without all the searching and calling around.</p>
+      <p>Because when something is wrong with your pet, your time should be spent taking care of them — not tracking down prices.</p>
+      <p class="accent">We think pet care should be easier to navigate, starting with knowing what it costs.</p>
+    </div>
+  </div>
+</div>
+
+<div class="team">
+  <div class="team-intro">
+    <h2>Meet the team</h2>
+    <p>We're two sisters whose love for our senior dog with special needs inspired Cone.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="team-photo">
+        <img class="icon" src="icons/image-placeholder.svg" alt="">
+        <div><div class="rule"></div><span class="label">Image placeholder</span></div>
+      </div>
+      <span class="team-role">Founder</span>
+    </div>
+    <div class="team-member">
+      <div class="team-photo">
+        <img class="icon" src="icons/image-placeholder.svg" alt="">
+        <div><div class="rule"></div><span class="label">Image placeholder</span></div>
+      </div>
+      <span class="team-role">Founder, Software Engineer</span>
+    </div>
+  </div>
+</div>
+
+<div class="mission-cta">
+  <h2>Be part of our mission.</h2>
+  <p>Our pets are family, and getting them the care they need shouldn't feel out of reach. Together, we can make pet care more transparent, affordable, and accessible.</p>
+  <a class="btn-primary" href="mailto:cone.vetfinder@gmail.com">Get in touch with Cone →</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <div class="brand-block">
+      <a class="wordmark" href="index.html">cone</a>
+      <span class="tagline">Vet care, without the guessing.</span>
+    </div>
+    <div class="footer-links">
+      <a href="about.html" class="active">About</a>
+      <a href="app.html">App</a>
+      <span class="badge"><img src="icons/smartphone.svg" alt="" style="width:16px;height:16px;"> Coming soon to the App Store</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 cone. Made for pets and their people.</span>
+    <span class="legal-links"><a href="terms-of-service.html">Terms of Service</a><span class="sep">|</span><a href="privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+</body>
+</html>
