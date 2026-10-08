@@ -3,98 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cone Terms of Service</title>
+<title>Terms of Service — Cone</title>
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-  /* Matches cone/Theme.swift exactly — ink, ink-muted, border, accent
-     (brandStrong), accent-tint (brandTint), surface (surfaceMuted), warn/
-     warn-tint (danger/dangerTint). The app itself has no dark mode (flat
-     hardcoded colors), so neither does this site — a dark variant here
-     wouldn't actually be "the app's color scheme," it'd be a different
-     one the app doesn't have. */
-  :root{
-    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#ECEBF0;
-    --border:#E4E2EA; --accent:#5B45A8; --accent-tint:#EFEBFA; --warn:#B23A30; --warn-tint:#FBE9E7;
-  }
-  *{ box-sizing:border-box; }
-  body{ margin:0; background:var(--bg); color:var(--ink); font-family:"Public Sans",-apple-system,system-ui,sans-serif; }
-  .wrap{ max-width:700px; margin:0 auto; padding:0 20px 80px; }
-  header.top{ position:sticky; top:0; background:var(--bg);
-    border-bottom:1px solid var(--border); padding:16px 20px; margin-bottom:8px; z-index:10; }
-  header.top .row{ max-width:700px; margin:0 auto; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  header.top .brand{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:15px; letter-spacing:.01em; }
-  header.top .updated{ font-size:12px; color:var(--ink-muted); }
-  h1{ font-family:"Sora",-apple-system,sans-serif; font-size:clamp(26px,5vw,34px); line-height:1.15;
-    letter-spacing:-0.01em; margin:28px 0 6px; }
-  .lede{ color:var(--ink-muted); font-size:15px; margin:0 0 32px; max-width:60ch; }
-  nav.toc{ background:var(--surface); border:1px solid var(--border); border-radius:12px;
-    padding:16px 20px; margin-bottom:32px; }
-  nav.toc .label{ font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-    color:var(--ink-muted); margin-bottom:10px; }
-  nav.toc ol{ margin:0; padding:0 0 0 1.2em; columns:2; column-gap:24px; font-size:13.5px; }
-  nav.toc li{ margin-bottom:6px; }
-  nav.toc a{ color:var(--ink); text-decoration:none; }
-  nav.toc a:hover{ color:var(--accent); }
-  section{ margin:36px 0; scroll-margin-top:70px; }
-  h2{ font-family:"Sora",-apple-system,sans-serif; font-size:19px; letter-spacing:-0.005em;
-    margin:0 0 12px; display:flex; gap:10px; align-items:baseline; }
-  h2 .num{ color:var(--accent); font-variant-numeric:tabular-nums; }
-  p{ font-size:14.5px; line-height:1.7; max-width:65ch; margin:0 0 14px; }
-  ul{ font-size:14.5px; line-height:1.7; max-width:65ch; padding-left:1.3em; margin:0 0 14px; }
-  li{ margin-bottom:6px; }
-  strong{ font-weight:650; }
-  .callout{ background:var(--accent-tint); border-radius:10px; padding:14px 16px; font-size:13.5px;
-    color:var(--ink); max-width:65ch; margin-bottom:14px; }
-  .warning{ background:var(--warn-tint); border-radius:10px; padding:14px 16px; font-size:13.5px;
-    color:var(--ink); max-width:65ch; margin-bottom:14px; border-left:3px solid var(--warn); }
-  a{ color:var(--accent); }
-  footer{ margin-top:56px; padding-top:20px; border-top:1px solid var(--border); font-size:12.5px; color:var(--ink-muted); }
+  /* Plain, linear legal-document layout — no jump-to-section table of
+     contents box, sections just flow top to bottom with numbered
+     headings, matching the reference layout this was asked to follow. */
+  .doc{ max-width:700px; margin:0 auto; padding:24px 20px 80px; }
+  .doc h1{ font-family:"Sora",-apple-system,sans-serif; font-size:clamp(28px,5vw,38px); line-height:1.15; margin:0 0 8px; }
+  .doc .updated{ color:var(--ink-muted); font-size:13px; margin:0 0 40px; }
+  .doc section{ margin:34px 0; }
+  .doc h2{ font-size:19px; font-weight:700; margin:0 0 12px; }
+  .doc h2 .num{ color:var(--purple); margin-right:4px; }
+  .doc p{ font-size:15px; line-height:1.7; margin:0 0 14px; max-width:65ch; }
+  .doc ul{ font-size:15px; line-height:1.7; margin:0 0 14px; padding-left:1.3em; max-width:65ch; }
+  .doc li{ margin-bottom:6px; }
+  .doc strong{ font-weight:650; }
+  .doc a{ color:var(--purple); }
+  .doc .callout{ background:var(--tint); border-radius:10px; padding:14px 16px; font-size:14px; max-width:65ch; margin-bottom:14px; }
+  .doc .warning{ background:#FBE9E7; border-left:3px solid #B23A30; border-radius:10px; padding:14px 16px; font-size:14px; max-width:65ch; margin-bottom:14px; }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="row">
-    <span class="brand">Cone</span>
-    <span class="updated">Last updated October 6, 2026</span>
+<nav class="nav">
+  <a class="wordmark" href="index.html">cone</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="app.html">App</a>
   </div>
-</header>
+</nav>
 
-<div class="wrap">
+<div class="doc">
   <h1>Terms of Service</h1>
-  <p class="lede">Please read these terms before using Cone. By creating an account or using the app, you agree to them.</p>
-
-  <nav class="toc" aria-label="Table of contents">
-    <div class="label">On this page</div>
-    <ol>
-      <li><a href="#accept">Acceptance of terms</a></li>
-      <li><a href="#service">What Cone is</a></li>
-      <li><a href="#accounts">Accounts</a></li>
-      <li><a href="#content">Your content &amp; conduct</a></li>
-      <li><a href="#scraping">Prohibited access &amp; scraping</a></li>
-      <li><a href="#accuracy">Pricing accuracy</a></li>
-      <li><a href="#medical">Not veterinary advice</a></li>
-      <li><a href="#termination">Termination</a></li>
-      <li><a href="#liability">Disclaimer &amp; liability</a></li>
-      <li><a href="#changes">Changes to these terms</a></li>
-      <li><a href="#contact">Contact us</a></li>
-    </ol>
-  </nav>
+  <p class="updated">Last updated October 8, 2026</p>
 
   <section id="accept">
-    <h2><span class="num">1.</span> Acceptance of terms</h2>
+    <h2><span class="num">1.</span>Acceptance of terms</h2>
     <p>By creating a Cone account or otherwise using the app, you agree to these Terms of Service and our <a href="privacy-policy.html">Privacy Policy</a>. If you don't agree, please don't use Cone.</p>
   </section>
 
   <section id="service">
-    <h2><span class="num">2.</span> What Cone is</h2>
+    <h2><span class="num">2.</span>What Cone is</h2>
     <p>Cone helps people find nearby veterinary clinics and see prices other pet owners have reported paying for common procedures. Anyone can browse the map and search vets without an account. Creating an account lets you save vets, upload your own prices, and build a pet profile.</p>
   </section>
 
   <section id="accounts">
-    <h2><span class="num">3.</span> Accounts</h2>
+    <h2><span class="num">3.</span>Accounts</h2>
     <ul>
       <li>You must provide an accurate email address and keep your password secure.</li>
       <li>You're responsible for activity that happens under your account.</li>
@@ -103,7 +62,7 @@
   </section>
 
   <section id="content">
-    <h2><span class="num">4.</span> Your content &amp; conduct</h2>
+    <h2><span class="num">4.</span>Your content &amp; conduct</h2>
     <p>When you submit a price, you're sharing the clinic name, procedure, and amount publicly with other users, so other pet owners can compare. Don't submit:</p>
     <ul>
       <li>False, fraudulent, or intentionally misleading pricing information.</li>
@@ -114,7 +73,7 @@
   </section>
 
   <section id="scraping">
-    <h2><span class="num">5.</span> Prohibited access &amp; scraping</h2>
+    <h2><span class="num">5.</span>Prohibited access &amp; scraping</h2>
     <p>The pricing data on Cone is crowdsourced by our users, for our users — not a dataset for anyone else to harvest. Without our prior written permission, you may not:</p>
     <ul>
       <li>Use a bot, scraper, crawler, or any other automated tool to access, collect, index, or store data from Cone, including vet listings or reported prices.</li>
@@ -126,36 +85,52 @@
   </section>
 
   <section id="accuracy">
-    <h2><span class="num">6.</span> Pricing accuracy</h2>
+    <h2><span class="num">6.</span>Pricing accuracy</h2>
     <p>Prices on Cone are self-reported by other users, not verified against clinic records. Prices can change, vary by pet, procedure specifics, or clinic policy, and may be out of date. Always confirm current pricing directly with the clinic before booking.</p>
   </section>
 
   <section id="medical">
-    <h2><span class="num">7.</span> Not veterinary advice</h2>
+    <h2><span class="num">7.</span>Not veterinary advice</h2>
     <div class="warning">Cone provides pricing information only. Nothing in the app is veterinary, medical, or professional advice. Always consult a licensed veterinarian for your pet's health and treatment decisions.</div>
   </section>
 
   <section id="termination">
-    <h2><span class="num">8.</span> Termination</h2>
+    <h2><span class="num">8.</span>Termination</h2>
     <p>You may stop using Cone and delete your account at any time. We may suspend or terminate accounts that violate these terms.</p>
   </section>
 
   <section id="liability">
-    <h2><span class="num">9.</span> Disclaimer &amp; limitation of liability</h2>
+    <h2><span class="num">9.</span>Disclaimer &amp; limitation of liability</h2>
     <p>Cone is provided "as is," without warranties of any kind. We don't guarantee the accuracy of any listed vet, price, or other information. To the fullest extent permitted by law, Cone and its developer aren't liable for any damages arising from your use of the app, including decisions made based on pricing or clinic information shown in it.</p>
   </section>
 
   <section id="changes">
-    <h2><span class="num">10.</span> Changes to these terms</h2>
+    <h2><span class="num">10.</span>Changes to these terms</h2>
     <p>We may update these terms from time to time. If we make material changes, we'll update the date at the top of this page.</p>
   </section>
 
   <section id="contact">
-    <h2><span class="num">11.</span> Contact us</h2>
+    <h2><span class="num">11.</span>Contact us</h2>
     <p>Questions about these terms? Reach us at <a href="mailto:cone.vetfinder@gmail.com">cone.vetfinder@gmail.com</a>.</p>
   </section>
-
-  <footer>Cone Terms of Service — a starting draft. Review before relying on it for a commercial launch.</footer>
 </div>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <div class="brand-block">
+      <a class="wordmark" href="index.html">cone</a>
+      <span class="tagline">Vet care, without the guessing.</span>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="app.html">App</a>
+      <span class="badge"><img src="icons/smartphone.svg" alt="" style="width:16px;height:16px;"> Coming soon to the App Store</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 cone. Made for pets and their people.</span>
+    <span class="legal-links"><a href="terms-of-service.html" class="active">Terms of Service</a><span class="sep">|</span><a href="privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
 </body>
 </html>

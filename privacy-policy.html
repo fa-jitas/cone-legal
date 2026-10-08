@@ -3,83 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cone Privacy Policy</title>
+<title>Privacy Policy — Cone</title>
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-  /* Matches cone/Theme.swift exactly — ink, ink-muted, border, accent
-     (brandStrong), accent-tint (brandTint), surface (surfaceMuted). The
-     app itself has no dark mode (flat hardcoded colors), so neither does
-     this site — a dark variant here wouldn't actually be "the app's
-     color scheme," it'd be a different one the app doesn't have. */
-  :root{
-    --ink:#1F1D26; --ink-muted:#6B6873; --bg:#FFFFFF; --surface:#ECEBF0;
-    --border:#E4E2EA; --accent:#5B45A8; --accent-tint:#EFEBFA;
-  }
-  *{ box-sizing:border-box; }
-  body{ margin:0; background:var(--bg); color:var(--ink); font-family:"Public Sans",-apple-system,system-ui,sans-serif; }
-  .wrap{ max-width:700px; margin:0 auto; padding:0 20px 80px; }
-  header.top{ position:sticky; top:0; background:var(--bg);
-    border-bottom:1px solid var(--border); padding:16px 20px; margin-bottom:8px; z-index:10; }
-  header.top .row{ max-width:700px; margin:0 auto; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  header.top .brand{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:15px; letter-spacing:.01em; }
-  header.top .updated{ font-size:12px; color:var(--ink-muted); }
-  h1{ font-family:"Sora",-apple-system,sans-serif; font-size:clamp(26px,5vw,34px); line-height:1.15;
-    letter-spacing:-0.01em; margin:28px 0 6px; }
-  .lede{ color:var(--ink-muted); font-size:15px; margin:0 0 32px; max-width:60ch; }
-  nav.toc{ background:var(--surface); border:1px solid var(--border); border-radius:12px;
-    padding:16px 20px; margin-bottom:32px; }
-  nav.toc .label{ font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-    color:var(--ink-muted); margin-bottom:10px; }
-  nav.toc ol{ margin:0; padding:0 0 0 1.2em; columns:2; column-gap:24px; font-size:13.5px; }
-  nav.toc li{ margin-bottom:6px; }
-  nav.toc a{ color:var(--ink); text-decoration:none; }
-  nav.toc a:hover{ color:var(--accent); }
-  section{ margin:36px 0; scroll-margin-top:70px; }
-  h2{ font-family:"Sora",-apple-system,sans-serif; font-size:19px; letter-spacing:-0.005em;
-    margin:0 0 12px; display:flex; gap:10px; align-items:baseline; }
-  h2 .num{ color:var(--accent); font-variant-numeric:tabular-nums; }
-  p{ font-size:14.5px; line-height:1.7; max-width:65ch; margin:0 0 14px; }
-  ul{ font-size:14.5px; line-height:1.7; max-width:65ch; padding-left:1.3em; margin:0 0 14px; }
-  li{ margin-bottom:6px; }
-  strong{ font-weight:650; }
-  .callout{ background:var(--accent-tint); border-radius:10px; padding:14px 16px; font-size:13.5px;
-    color:var(--ink); max-width:65ch; }
-  .callout a{ color:var(--accent); font-weight:600; }
-  a{ color:var(--accent); }
-  footer{ margin-top:56px; padding-top:20px; border-top:1px solid var(--border); font-size:12.5px; color:var(--ink-muted); }
+  /* Plain, linear legal-document layout — no jump-to-section table of
+     contents box, sections just flow top to bottom with numbered
+     headings, matching the reference layout this was asked to follow. */
+  .doc{ max-width:700px; margin:0 auto; padding:24px 20px 80px; }
+  .doc h1{ font-family:"Sora",-apple-system,sans-serif; font-size:clamp(28px,5vw,38px); line-height:1.15; margin:0 0 8px; }
+  .doc .updated{ color:var(--ink-muted); font-size:13px; margin:0 0 40px; }
+  .doc section{ margin:34px 0; }
+  .doc h2{ font-size:19px; font-weight:700; margin:0 0 12px; }
+  .doc h2 .num{ color:var(--purple); margin-right:4px; }
+  .doc p{ font-size:15px; line-height:1.7; margin:0 0 14px; max-width:65ch; }
+  .doc ul{ font-size:15px; line-height:1.7; margin:0 0 14px; padding-left:1.3em; max-width:65ch; }
+  .doc li{ margin-bottom:6px; }
+  .doc strong{ font-weight:650; }
+  .doc a{ color:var(--purple); }
+  .doc .callout{ background:var(--tint); border-radius:10px; padding:14px 16px; font-size:14px; max-width:65ch; }
+  .doc .callout a{ color:var(--purple); font-weight:600; }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="row">
-    <span class="brand">Cone</span>
-    <span class="updated">Last updated September 28, 2026</span>
+<nav class="nav">
+  <a class="wordmark" href="index.html">cone</a>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="app.html">App</a>
   </div>
-</header>
+</nav>
 
-<div class="wrap">
+<div class="doc">
   <h1>Privacy Policy</h1>
-  <p class="lede">Cone helps people find affordable vets nearby and see real prices other pet owners have paid. This page explains what we collect, why, and how you can delete it.</p>
-
-  <nav class="toc" aria-label="Table of contents">
-    <div class="label">On this page</div>
-    <ol>
-      <li><a href="#collect">Information we collect</a></li>
-      <li><a href="#use">How we use it</a></li>
-      <li><a href="#public">What's public vs. private</a></li>
-      <li><a href="#thirdparty">Third-party services</a></li>
-      <li><a href="#retention">Retention &amp; deletion</a></li>
-      <li><a href="#kids">Children's privacy</a></li>
-      <li><a href="#changes">Changes to this policy</a></li>
-      <li><a href="#contact">Contact us</a></li>
-    </ol>
-  </nav>
+  <p class="updated">Last updated October 8, 2026</p>
 
   <section id="collect">
-    <h2><span class="num">1.</span> Information we collect</h2>
+    <h2><span class="num">1.</span>Information we collect</h2>
     <p><strong>Account information.</strong> When you create a Cone account, we collect your email address and password. Your password is handled entirely by our authentication provider (Supabase) and is never visible to us in plain text.</p>
     <p><strong>Pet profile.</strong> Your pet's name, species, gender, breed, birth date, weight, and an optional photo, if you choose to add one.</p>
     <p><strong>Receipts you submit.</strong> When you log a price — the clinic name, procedure, amount paid, your pet's species, the date, and an optional photo of the receipt.</p>
@@ -88,7 +52,7 @@
   </section>
 
   <section id="use">
-    <h2><span class="num">2.</span> How we use it</h2>
+    <h2><span class="num">2.</span>How we use it</h2>
     <ul>
       <li>To create and secure your account.</li>
       <li>To show your pet's profile back to you.</li>
@@ -99,7 +63,7 @@
   </section>
 
   <section id="public">
-    <h2><span class="num">3.</span> What's public vs. private</h2>
+    <h2><span class="num">3.</span>What's public vs. private</h2>
     <p>Cone's core idea is price transparency, so some information is intentionally visible to other users:</p>
     <ul>
       <li><strong>Public:</strong> the clinic name, procedure, price, and pet species from a receipt you submit. This is what lets other pet owners compare prices.</li>
@@ -108,32 +72,48 @@
   </section>
 
   <section id="thirdparty">
-    <h2><span class="num">4.</span> Third-party services</h2>
+    <h2><span class="num">4.</span>Third-party services</h2>
     <p>Cone is built on <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, which provides our account system, database, and photo storage. Supabase processes data on our behalf and does not use it for its own purposes. We don't use any advertising or analytics networks.</p>
   </section>
 
   <section id="retention">
-    <h2><span class="num">5.</span> Retention &amp; deletion</h2>
+    <h2><span class="num">5.</span>Retention &amp; deletion</h2>
     <p>We keep your information for as long as your account is active. You can permanently delete your account, right in the app, at any time:</p>
     <p class="callout"><strong>Profile → Settings → Account → Delete Account.</strong> This immediately and permanently removes your pet profile, your receipts, and your account itself. This cannot be undone.</p>
   </section>
 
   <section id="kids">
-    <h2><span class="num">6.</span> Children's privacy</h2>
+    <h2><span class="num">6.</span>Children's privacy</h2>
     <p>Cone is not directed at children under 13, and we do not knowingly collect information from anyone under 13.</p>
   </section>
 
   <section id="changes">
-    <h2><span class="num">7.</span> Changes to this policy</h2>
+    <h2><span class="num">7.</span>Changes to this policy</h2>
     <p>If we make material changes to this policy, we'll update the date at the top of this page.</p>
   </section>
 
   <section id="contact">
-    <h2><span class="num">8.</span> Contact us</h2>
+    <h2><span class="num">8.</span>Contact us</h2>
     <p>Questions about this policy or your data? Reach us at <a href="mailto:cone.vetfinder@gmail.com">cone.vetfinder@gmail.com</a>.</p>
   </section>
-
-  <footer>Cone Privacy Policy — a starting draft. Review before relying on it for a commercial launch.</footer>
 </div>
+
+<footer class="site-footer">
+  <div class="footer-nav">
+    <div class="brand-block">
+      <a class="wordmark" href="index.html">cone</a>
+      <span class="tagline">Vet care, without the guessing.</span>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="app.html">App</a>
+      <span class="badge"><img src="icons/smartphone.svg" alt="" style="width:16px;height:16px;"> Coming soon to the App Store</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 cone. Made for pets and their people.</span>
+    <span class="legal-links"><a href="terms-of-service.html">Terms of Service</a><span class="sep">|</span><a href="privacy-policy.html" class="active">Privacy Policy</a></span>
+  </div>
+</footer>
 </body>
 </html>
