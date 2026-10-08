@@ -61,6 +61,21 @@
        gap for them to sit in, so they'd just overlap the content. */
     .story::before, .story-marker, .lead-in{ display:none; }
   }
+
+  /* Scroll reveal — fades/slides each section up into place the first
+     time it scrolls into view (see the IntersectionObserver script at
+     the bottom). `.reveal` is the resting (hidden) state; JS adds `.in`
+     once it's actually visible. Marked `.in` by default and the
+     transition skipped entirely under reduced-motion, so nothing ever
+     depends on JS running for the page to be readable. */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  .story-marker{ opacity:0; transition:opacity .4s ease .3s; }
+  .beat.in .story-marker{ opacity:1; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .story-marker{ opacity:1; transition:none; }
+  }
 </style>
 </head>
 <body>
@@ -80,7 +95,7 @@
 </div>
 
 <div class="story">
-  <div class="beat">
+  <div class="beat reveal">
     <img class="photo" src="about-quiet-home.png" alt="A dog resting at home">
     <div class="beat-copy">
       <h2>Your pet gets sick. You want to get them care.</h2>
@@ -91,7 +106,7 @@
     <img class="story-marker" src="icons/story-marker.svg" alt="">
   </div>
 
-  <div class="beat reverse">
+  <div class="beat reverse reveal">
     <img class="photo" src="about-everyday.png" alt="Caring for a cat at home">
     <div class="beat-copy">
       <h2>For a lot of us, cost matters.</h2>
@@ -101,7 +116,7 @@
     <img class="story-marker" src="icons/story-marker.svg" alt="">
   </div>
 
-  <div class="beat">
+  <div class="beat reveal">
     <img class="photo" src="about-timespent.png" alt="A dog resting on a couch">
     <div class="beat-copy">
       <h2>That's why we built Cone.</h2>
@@ -114,11 +129,11 @@
 </div>
 
 <div class="team">
-  <div class="team-intro">
+  <div class="team-intro reveal">
     <h2>Meet the team</h2>
     <p>We're two sisters whose love for our senior dog with special needs inspired Cone.</p>
   </div>
-  <div class="team-grid">
+  <div class="team-grid reveal">
     <div class="team-member">
       <div class="team-photo">
         <img class="icon" src="icons/image-placeholder.svg" alt="">
@@ -136,7 +151,7 @@
   </div>
 </div>
 
-<div class="mission-cta">
+<div class="mission-cta reveal">
   <h2>Be part of our mission.</h2>
   <p>Our pets are family, and getting them the care they need shouldn't feel out of reach. Together, we can make pet care more transparent, affordable, and accessible.</p>
   <a class="btn-primary" href="mailto:cone.vetfinder@gmail.com">Get in touch with Cone →</a>
@@ -159,5 +174,31 @@
     <span class="legal-links"><a href="terms-of-service.html">Terms of Service</a><span class="sep">|</span><a href="privacy-policy.html">Privacy Policy</a></span>
   </div>
 </footer>
+
+<script>
+  // Reveals each `.reveal` section the first time it scrolls into view,
+  // then stops watching it — a one-time entrance, not a re-trigger on
+  // every scroll up/down. No-ops safely if IntersectionObserver isn't
+  // available; the CSS default (.reveal with no .in) is still opacity:0
+  // in that case, so this is wrapped in a feature check rather than
+  // risking content that never appears.
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      el.classList.add('in');
+    });
+  }
+</script>
 </body>
 </html>
