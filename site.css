@@ -16,30 +16,19 @@ img{ max-width:100%; display:block; }
 .icon-white{ filter:brightness(0) invert(1); }
 a{ color:inherit; }
 
-/* Nav — purple background, so wordmark/links flip to white/light
-   instead of the ink/purple-on-cream scheme that worked for a white
-   header. */
-.nav{ display:flex; align-items:center; justify-content:space-between; padding:28px 80px; background:var(--purple); }
-.nav .wordmark{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:22px; color:#fff; text-decoration:none; }
+/* Nav — back to a plain white header (the purple treatment moved to
+   the footer instead, per correction). */
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:28px 80px; }
+.nav .wordmark{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:22px; color:var(--purple); text-decoration:none; }
 .nav .links{ display:flex; align-items:center; gap:36px; font-size:15px; }
-.nav .links a{ text-decoration:none; color:rgba(255,255,255,.82); }
-.nav .links a.active{ color:#fff; font-weight:600; }
+.nav .links a{ text-decoration:none; color:var(--ink); }
+.nav .links a.active{ color:var(--purple); font-weight:600; }
 /* "App" is a pill, not a plain text link — calls it out from Home/About
-   as the one that actually leads toward the product/download. Inverted
-   (white fill) so it still reads as a distinct pill against the now-
-   purple header, instead of disappearing into it. */
-.nav .links a.nav-pill{ background:#fff; color:var(--purple-dark); font-weight:600;
+   as the one that actually leads toward the product/download. */
+.nav .links a.nav-pill{ background:var(--tint); color:var(--purple-dark); font-weight:600;
   padding:8px 18px; border-radius:999px; transition:background .15s ease, color .15s ease; }
-.nav .links a.nav-pill:hover{ background:var(--tint); }
-.nav .links a.nav-pill.active{ background:var(--purple-dark); color:#fff; }
-
-/* Wavy bottom edge on the header — an SVG hanging off the purple nav,
-   filled the same purple, with the page's own background showing
-   through below the wave's troughs. `preserveAspectRatio="none"` lets
-   it stretch to any width; height is fixed here so the wave shape
-   itself doesn't distort. */
-.nav-wave{ display:block; width:100%; height:36px; margin-top:-1px; }
-.nav-wave path{ fill:var(--purple); }
+.nav .links a.nav-pill:hover{ background:var(--purple-pale); }
+.nav .links a.nav-pill.active{ background:var(--purple); color:#fff; }
 
 /* Buttons */
 .btn-primary{ display:inline-flex; align-items:center; gap:10px; background:var(--purple); color:#fff;
@@ -57,20 +46,37 @@ a{ color:inherit; }
 .section{ padding:88px 80px; }
 .kicker{ color:var(--purple); font-size:12px; text-transform:uppercase; letter-spacing:.04em; margin:0 0 16px; }
 
-/* Footer (shared across all pages, including the legal ones) */
-footer.site-footer{ border-top:1px solid var(--border); padding:40px 80px 28px; }
+/* Wavy top edge on the footer — an SVG sitting flush against the
+   footer's own top edge, filled the same purple as the footer below
+   it, with the page's cream background showing through above the
+   wave's peaks. Mirror of the header's earlier wave: there the fill
+   sat above the curve (purple above, cream below); here it sits below
+   the curve (cream above, purple below), since the footer is below
+   this divider instead of above it. */
+.footer-wave{ display:block; width:100%; height:36px; margin-bottom:-1px; }
+.footer-wave path{ fill:var(--purple); }
+
+/* Footer (shared across all pages, including the legal ones) — purple
+   background, so wordmark/links/text all flip to white/light instead
+   of the ink/purple-on-cream scheme that worked on a cream footer. */
+footer.site-footer{ background:var(--purple); padding:40px 80px 28px; }
 footer.site-footer .footer-nav{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:28px; }
 footer.site-footer .brand-block{ display:flex; flex-direction:column; gap:10px; }
-footer.site-footer .wordmark{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:20px; color:var(--purple); text-decoration:none; }
-footer.site-footer .tagline{ color:var(--ink-muted); font-size:13px; }
+footer.site-footer .wordmark{ font-family:"Sora",-apple-system,sans-serif; font-weight:700; font-size:20px; color:#fff; text-decoration:none; }
+footer.site-footer .tagline{ color:rgba(255,255,255,.72); font-size:13px; }
 footer.site-footer .footer-links{ display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
-footer.site-footer .footer-links a{ font-size:14px; text-decoration:none; color:var(--ink); }
-footer.site-footer .footer-links a.active{ color:var(--purple); font-weight:600; }
-footer.site-footer .footer-bottom{ border-top:1px solid var(--border); padding-top:20px; display:flex; justify-content:space-between;
-  flex-wrap:wrap; gap:10px; font-size:12.5px; color:var(--ink-muted); }
-footer.site-footer .footer-bottom .legal-links a{ color:var(--ink-muted); text-decoration:none; }
-footer.site-footer .footer-bottom .legal-links a:hover{ color:var(--purple); }
-footer.site-footer .footer-bottom .legal-links .sep{ margin:0 8px; color:var(--border2); }
+footer.site-footer .footer-links a{ font-size:14px; text-decoration:none; color:rgba(255,255,255,.85); }
+footer.site-footer .footer-links a.active{ color:#fff; font-weight:600; }
+/* The "Coming soon" badge needs its own on-purple styling — the
+   default surface-muted/ink-muted pairing used on a cream background
+   would be unreadably low-contrast here. */
+footer.site-footer .footer-links .badge{ background:rgba(255,255,255,.14); color:#fff; }
+footer.site-footer .footer-links .badge img{ filter:brightness(0) invert(1); }
+footer.site-footer .footer-bottom{ border-top:1px solid rgba(255,255,255,.18); padding-top:20px; display:flex; justify-content:space-between;
+  flex-wrap:wrap; gap:10px; font-size:12.5px; color:rgba(255,255,255,.68); }
+footer.site-footer .footer-bottom .legal-links a{ color:rgba(255,255,255,.68); text-decoration:none; }
+footer.site-footer .footer-bottom .legal-links a:hover{ color:#fff; }
+footer.site-footer .footer-bottom .legal-links .sep{ margin:0 8px; color:rgba(255,255,255,.3); }
 
 @media (max-width: 900px){
   .nav{ padding:20px 24px; }
