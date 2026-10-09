@@ -96,20 +96,10 @@
   .mission-link{ display:flex; align-items:center; gap:10px; color:var(--purple); font-weight:600; font-size:15px; text-decoration:none; }
   .mission-link img{ width:18px; height:18px; }
 
-  .waitlist{ background:var(--tint); border-radius:32px; padding:56px; display:flex; gap:72px; align-items:center; flex-wrap:wrap; margin:0 80px 64px; }
-  .waitlist-copy{ width:596px; max-width:100%; }
-  .waitlist-copy h2{ font-size:clamp(28px,4vw,44px); line-height:1.15; font-weight:400; margin:0 0 18px; }
-  .waitlist-copy p{ color:var(--ink-muted); font-size:16px; line-height:1.65; margin:0; }
-  .waitlist-form{ flex:1; min-width:260px; display:flex; flex-direction:column; gap:14px; }
-  .waitlist-form label{ font-size:13px; font-weight:600; }
-  .waitlist-form input{ background:#fff; border:1px solid var(--border); border-radius:12px; height:54px; padding:0 18px; font-size:14px; font-family:inherit; }
-  .waitlist-form input::placeholder{ color:var(--ink-muted); }
-
   @media (max-width: 900px){
     .hero, .benefits, .compare, .community-story, .mission-row{ flex-direction:column; align-items:flex-start; }
     .hero{ padding:32px 24px 48px; }
     .benefits{ padding:24px; }
-    .waitlist{ margin:0 24px 48px; padding:32px; flex-direction:column; }
     .mission-row img.photo{ width:100%; }
     .share-card{ margin-left:0; }
   }
@@ -226,18 +216,6 @@
       <p class="lede">We believe pet owners deserve a clearer view of vet care costs. Cone brings nearby options and real paid prices together, so you can make decisions with more confidence and less guesswork.</p>
       <a class="mission-link" href="about.html">A little more about cone <img src="icons/arrow-up-right.svg" alt=""></a>
     </div>
-  </div>
-</div>
-
-<div class="waitlist">
-  <div class="waitlist-copy">
-    <h2>A better way to find care is on its way.</h2>
-    <p>Be the first to hear when cone is ready for you and your pet.</p>
-  </div>
-  <div class="waitlist-form">
-    <label for="wl-email">Your email address</label>
-    <input id="wl-email" type="email" placeholder="you@example.com">
-    <a class="btn-primary" href="mailto:cone.vetfinder@gmail.com?subject=Keep%20me%20posted" style="justify-content:center;">Keep me in the loop <img src="icons/arrow-right.svg" alt=""></a>
   </div>
 </div>
 
