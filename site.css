@@ -33,6 +33,14 @@ a{ color:inherit; }
 .nav .links a.nav-pill:hover{ background:var(--tint); }
 .nav .links a.nav-pill.active{ background:var(--purple-dark); color:#fff; }
 
+/* Wavy bottom edge on the header — an SVG hanging off the purple nav,
+   filled the same purple, with the page's own background showing
+   through below the wave's troughs. `preserveAspectRatio="none"` lets
+   it stretch to any width; height is fixed here so the wave shape
+   itself doesn't distort. */
+.nav-wave{ display:block; width:100%; height:36px; margin-top:-1px; }
+.nav-wave path{ fill:var(--purple); }
+
 /* Buttons */
 .btn-primary{ display:inline-flex; align-items:center; gap:10px; background:var(--purple); color:#fff;
   border:1px solid var(--purple); border-radius:999px; padding:15px 24px; font-weight:600; font-size:15px;
