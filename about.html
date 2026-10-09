@@ -30,7 +30,17 @@
      narrative thread. Sits behind the beats in paint order; visually
      only shows through the gap between each beat's photo and copy. */
   .story::before{ content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--border2); transform:translateX(-50%); }
-  .beat{ display:flex; gap:100px; align-items:center; justify-content:center; flex-wrap:wrap; position:relative; }
+  /* max-width + margin:auto on the row itself, not just its children —
+     the previous fix capped `.beat-copy`'s width and tried to center
+     the leftover space with `justify-content`, but `.beat` (the flex
+     container) still stretched to the full story width, so the row's
+     own box and its visually-centered content weren't the same thing.
+     Capping and centering `.beat` as a block guarantees its midpoint
+     IS the content's midpoint, full stop — no separate centering step
+     that can drift out of sync with the spine (which sits at 50% of
+     the now-identically-centered `.story`). 1060px = 480 photo + 100
+     gap + 480 copy, exactly. */
+  .beat{ display:flex; gap:100px; align-items:center; flex-wrap:wrap; position:relative; max-width:1060px; margin:0 auto; }
   .beat.reverse{ flex-direction:row-reverse; }
   /* "Story marker" — the small dot centered on the spine at each beat,
      the real exported asset (a purple circle with a cream ring). */
@@ -60,9 +70,17 @@
   .mission-cta h2{ color:var(--purple); font-size:clamp(32px,6vw,58px); font-weight:600; line-height:1.12; margin:0; max-width:800px; }
   .mission-cta p{ font-size:19px; line-height:1.6; max-width:650px; margin:0; }
 
-  @media (max-width: 900px){
+  /* 1240px, not 900px — `.beat` needs 1060px (480 photo + 100 gap + 480
+     copy) plus `.story`'s own 160px of horizontal padding to lay out
+     side-by-side at all. Stacking any later than that leaves a gap
+     between "no longer fits" and "actually stacked," where flex-wrap
+     would kick in on its own without the clean single-column treatment
+     below — an awkward half-wrapped state, not the deliberate mobile
+     layout. */
+  @media (max-width: 1240px){
     .story{ padding:56px 24px; gap:56px; }
-    .beat, .beat.reverse{ flex-direction:column; }
+    .beat, .beat.reverse{ flex-direction:column; max-width:none; }
+    .beat-copy{ max-width:none; }
     /* The spine/markers only make sense threading through the gap in
        the desktop side-by-side layout — stacked on mobile, there's no
        gap for them to sit in, so they'd just overlap the content. */
