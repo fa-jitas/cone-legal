@@ -17,19 +17,26 @@
      story section's own spine below it. */
   .lead-in{ position:absolute; left:50%; bottom:0; transform:translateX(-50%); width:1px; height:64px; background:var(--purple-pale); }
 
-  .story{ display:flex; flex-direction:column; gap:100px; padding:100px 80px; position:relative; }
+  /* max-width + centered, not just horizontal padding — without a cap,
+     a wide viewport let `.beat-copy` (flex:1) keep stretching to fill
+     the extra space, which drags each row's actual visual midpoint away
+     from the spine's fixed 50% position (the spine stays centered on
+     the *row*, but the row's center of mass shifts right as the text
+     column grows) — that's what put the line through the paragraph
+     text instead of in the gap. */
+  .story{ display:flex; flex-direction:column; gap:100px; max-width:1280px; margin:0 auto; padding:100px 80px; position:relative; }
   /* "Shared story spine" — one continuous vertical line running the full
      height of the story section, connecting all three beats as a single
      narrative thread. Sits behind the beats in paint order; visually
      only shows through the gap between each beat's photo and copy. */
   .story::before{ content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--border2); transform:translateX(-50%); }
-  .beat{ display:flex; gap:100px; align-items:center; flex-wrap:wrap; position:relative; }
+  .beat{ display:flex; gap:100px; align-items:center; justify-content:center; flex-wrap:wrap; position:relative; }
   .beat.reverse{ flex-direction:row-reverse; }
   /* "Story marker" — the small dot centered on the spine at each beat,
      the real exported asset (a purple circle with a cream ring). */
   .story-marker{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:9px; height:9px; z-index:1; }
   .beat img.photo{ width:480px; max-width:100%; height:480px; object-fit:cover; border-radius:4px; flex-shrink:0; }
-  .beat-copy{ flex:1; min-width:280px; display:flex; flex-direction:column; gap:22px; }
+  .beat-copy{ flex:1; max-width:480px; min-width:280px; display:flex; flex-direction:column; gap:22px; }
   .beat-copy h2{ font-size:clamp(24px,3vw,34px); font-weight:500; line-height:1.2; margin:0; }
   .beat-copy p{ font-size:18px; line-height:1.6; margin:0; color:var(--ink); }
   .beat-copy p.muted{ color:var(--ink-muted); }
