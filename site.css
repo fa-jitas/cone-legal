@@ -49,15 +49,17 @@ a{ color:inherit; }
 /* Wavy top edge on the footer — an SVG sitting flush against the
    footer's own top edge, filled the same purple as the footer below
    it. The area above the wave's peaks is transparent in the SVG
-   itself, so without a background set here it was revealing the
-   plain page background behind it — not whatever section actually
-   sits directly above (About's `.mission-cta` and App's `.trust`, both
-   `var(--tint)`), leaving a visible pale seam between the two. Tint is
-   close enough to cream that using it as this element's own
-   background reads correctly either way: seamless against a tint
-   section above, and imperceptibly different against a plain cream
-   one. */
-.footer-wave{ display:block; width:100%; height:36px; margin-bottom:-1px; background:var(--tint); }
+   itself, so it needs an explicit background matching whatever
+   section actually sits directly above it on each page, or the plain
+   page background shows through as a seam instead. Defaults to cream
+   (correct on Home, Terms and Privacy, whose last section before the
+   footer is plain) — pages where that section is tinted instead
+   (About's `.mission-cta`, App's `.trust`) add `.on-tint` to this
+   element to match. Turns out tint is NOT close enough to cream to
+   double as a one-size-fits-all background (visible as a stray pale
+   purple outline on Home) — this has to be per-page, not global. */
+.footer-wave{ display:block; width:100%; height:36px; margin-bottom:-1px; background:var(--cream); }
+.footer-wave.on-tint{ background:var(--tint); }
 .footer-wave path{ fill:var(--purple); }
 
 /* Footer (shared across all pages, including the legal ones) — purple
