@@ -48,12 +48,16 @@ a{ color:inherit; }
 
 /* Wavy top edge on the footer — an SVG sitting flush against the
    footer's own top edge, filled the same purple as the footer below
-   it, with the page's cream background showing through above the
-   wave's peaks. Mirror of the header's earlier wave: there the fill
-   sat above the curve (purple above, cream below); here it sits below
-   the curve (cream above, purple below), since the footer is below
-   this divider instead of above it. */
-.footer-wave{ display:block; width:100%; height:36px; margin-bottom:-1px; }
+   it. The area above the wave's peaks is transparent in the SVG
+   itself, so without a background set here it was revealing the
+   plain page background behind it — not whatever section actually
+   sits directly above (About's `.mission-cta` and App's `.trust`, both
+   `var(--tint)`), leaving a visible pale seam between the two. Tint is
+   close enough to cream that using it as this element's own
+   background reads correctly either way: seamless against a tint
+   section above, and imperceptibly different against a plain cream
+   one. */
+.footer-wave{ display:block; width:100%; height:36px; margin-bottom:-1px; background:var(--tint); }
 .footer-wave path{ fill:var(--purple); }
 
 /* Footer (shared across all pages, including the legal ones) — purple
