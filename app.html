@@ -69,20 +69,7 @@
   .review-float .t{ font-size:16px; color:var(--ink); font-weight:500; }
 
   .share-wrap{ width:430px; max-width:100%; flex-shrink:0; }
-  .share-box{ background:#fff; border-radius:28px; padding:28px; box-shadow:0 24px 48px rgba(53,35,74,.12); display:flex; flex-direction:column; gap:18px; }
-  .share-box .hdr{ display:flex; justify-content:space-between; align-items:center; }
-  .share-box .hdr p{ margin:0; font-size:21px; font-weight:600; }
-  .share-box .hdr img{ width:20px; height:20px; }
-  .opt{ display:flex; align-items:center; gap:12px; border-radius:14px; padding:18px; }
-  .opt.scan{ background:var(--tint); }
-  .opt.manual{ border:1px solid var(--border); }
-  .opt img.ic{ width:20px; height:20px; }
-  .opt .t{ font-size:14px; font-weight:600; color:var(--purple-dark); margin:0; }
-  .opt.manual .t{ color:var(--purple); font-weight:400; flex:1; }
-  .opt .d{ font-size:12px; color:var(--ink-muted); margin:2px 0 0; }
-  .opt .chev{ width:16px; height:16px; margin-left:auto; }
-  .share-status{ display:flex; gap:8px; align-items:center; color:var(--ink-muted); font-size:12px; border-top:1px solid var(--border); padding-top:14px; }
-  .share-status img{ width:16px; height:16px; }
+  .share-screenshot{ display:block; width:100%; border-radius:28px; box-shadow:0 24px 48px rgba(53,35,74,.12); }
 
   .trust{ background:var(--tint); padding:64px 80px; display:flex; flex-direction:column; gap:48px; }
   .trust-hdr{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; }
@@ -178,13 +165,7 @@
 
 <div class="feat-row">
   <div class="share-wrap">
-    <div class="share-box">
-      <div class="hdr"><p>Share a receipt</p><img src="icons/plus.svg" alt=""></div>
-      <p style="color:var(--ink-muted); font-size:14px; margin:0;">A little care, recorded. Choose how you'd like to add your receipt.</p>
-      <div class="opt scan"><img class="ic" src="icons/scan-line.svg" alt=""><div><p class="t">Scan your receipt</p><p class="d">Start with your vet receipt</p></div><img class="chev" src="icons/chevron-right.svg" alt=""></div>
-      <div class="opt manual"><img class="ic" src="icons/pencil-line.svg" alt=""><p class="t">Enter details manually</p><img class="chev" src="icons/chevron-right.svg" alt=""></div>
-      <div class="share-status"><img src="icons/clock.svg" alt=""> Reviewed before public display</div>
-    </div>
+    <img class="share-screenshot" src="uploadreceipts.png" alt="Cone's Add a Receipt sheet, with options to use the Photo Library, take a picture, or enter details manually">
   </div>
   <div class="feat-copy">
     <h2>Upload</h2>
