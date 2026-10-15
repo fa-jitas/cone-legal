@@ -72,16 +72,7 @@
   .community-copy .lede{ color:var(--ink-muted); font-size:17px; line-height:1.7; margin:0; max-width:50ch; }
   .review-note{ display:flex; align-items:center; gap:10px; color:var(--purple-dark); font-size:14px; }
   .review-note img{ width:20px; height:20px; }
-  .share-card{ background:#fff; border-radius:24px; padding:24px; width:316px; max-width:100%; box-shadow:0 12px 32px rgba(53,35,74,.08); display:flex; flex-direction:column; gap:18px; margin-left:auto; }
-  .share-card .hdr{ display:flex; justify-content:space-between; align-items:center; }
-  .share-card .hdr p{ margin:0; font-size:18px; font-weight:600; }
-  .share-card .hdr img{ width:20px; height:20px; }
-  .scan-opt{ background:var(--tint); border-radius:12px; padding:16px; display:flex; align-items:center; gap:12px; }
-  .scan-opt img{ width:24px; height:24px; }
-  .scan-opt p{ margin:0; color:var(--purple-dark); font-weight:600; font-size:14px; }
-  .manual-note{ text-align:center; color:var(--purple); font-size:13px; }
-  .review-status{ display:flex; align-items:center; gap:8px; color:var(--ink-muted); font-size:11px; border-top:1px solid var(--border); padding-top:16px; }
-  .review-status img{ width:15px; height:15px; }
+  .share-screenshot{ display:block; width:316px; max-width:100%; border-radius:24px; box-shadow:0 12px 32px rgba(53,35,74,.08); margin-left:auto; }
   .process{ display:flex; gap:40px; flex-wrap:wrap; border-top:1px solid var(--border2); margin-top:56px; padding-top:32px; }
   .process .step{ flex:1; min-width:200px; display:flex; gap:16px; }
   .process .num{ color:var(--purple); font-weight:600; font-size:13px; }
@@ -101,7 +92,7 @@
     .hero{ padding:32px 24px 48px; }
     .benefits{ padding:24px; }
     .mission-row img.photo{ width:100%; }
-    .share-card{ margin-left:0; }
+    .share-screenshot{ margin-left:0; }
   }
 </style>
 </head>
@@ -191,13 +182,7 @@
       <p class="lede">After a vet visit, share what you paid. Every receipt adds a little more transparency and makes it easier for someone else to plan for care.</p>
       <div class="review-note"><img src="icons/shield-check.svg" alt=""> Reviewed first. Shared second.</div>
     </div>
-    <div class="share-card">
-      <div class="hdr"><p>Share a receipt</p><img src="icons/plus.svg" alt=""></div>
-      <div class="scan-opt"><img src="icons/scan-line.svg" alt=""><p>Scan your receipt</p></div>
-      <p class="manual-note">Or enter the details manually</p>
-      <div style="border-top:1px solid var(--border);"></div>
-      <div class="review-status"><img src="icons/clock.svg" alt=""> Reviewed before public display</div>
-    </div>
+    <img class="share-screenshot" src="uploadreceipts.png" alt="Cone's Add a Receipt sheet, with options to use the Photo Library, take a picture, or enter details manually">
   </div>
   <div class="process">
     <div class="step"><span class="num">01</span><div><h4>Share what you paid</h4><p>Scan a receipt or enter it manually.</p></div></div>
