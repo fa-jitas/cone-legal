@@ -34,27 +34,8 @@
   .feat-copy .note{ display:flex; align-items:center; gap:10px; color:var(--purple-dark); font-size:14px; }
   .feat-copy .note img{ width:18px; height:18px; }
 
-  .phone{ background:#fff; border:5px solid var(--border); border-radius:40px; padding:18px; width:280px; max-width:100%;
-    box-shadow:0 24px 48px rgba(53,35,74,.12); display:flex; flex-direction:column; gap:14px; flex-shrink:0; }
-  .phone .hdr{ display:flex; justify-content:space-between; align-items:center; }
-  .phone .hdr .wm{ font-family:"Sora",sans-serif; font-weight:700; color:var(--purple); font-size:17px; }
-  .phone .hdr img{ width:20px; height:20px; }
-  .phone h4{ font-size:18px; margin:0; }
-  .phone .loc{ background:var(--surface-muted); border-radius:12px; height:36px; display:flex; align-items:center; gap:8px; padding:0 10px; font-size:11px; }
-  .phone .loc img{ width:14px; height:14px; }
-  .phone .card{ border:1px solid var(--border); border-radius:14px; padding:14px; }
-  .phone .card.hl{ border-color:var(--purple); }
-  .phone .row{ display:flex; gap:10px; align-items:center; margin-bottom:10px; }
-  .phone .row .sym{ background:var(--tint); border-radius:10px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .phone .row .sym img{ width:17px; height:17px; }
-  .phone .row p{ margin:0; font-size:12px; }
-  .phone .row .meta{ color:var(--ink-muted); font-size:9px; }
-  .phone hr{ border:none; border-top:1px solid var(--border); margin:0 0 10px; }
-  .phone .pr{ display:flex; justify-content:space-between; align-items:flex-end; }
-  .phone .pr .p1{ font-size:10px; color:var(--ink-muted); margin:0; }
-  .phone .pr .p2{ font-size:9px; color:var(--purple); margin:0; }
-  .phone .pr .amt{ font-size:22px; font-weight:600; margin:0; }
-  .phone .fine{ color:var(--ink-muted); font-size:8.5px; }
+  .search-screenshot{ display:block; width:360px; max-width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:28px;
+    box-shadow:0 24px 48px rgba(53,35,74,.12); flex-shrink:0; }
 
   .receipt-wrap{ position:relative; width:420px; max-width:100%; height:300px; flex-shrink:0; }
   .sample-receipt{ position:absolute; left:0; top:0; background:#fff; border-radius:20px; padding:26px; width:220px; box-shadow:0 16px 40px rgba(53,35,74,.12); transform:rotate(-5deg); display:flex; flex-direction:column; gap:14px; }
@@ -120,20 +101,7 @@
 </div>
 
 <div class="feat-row">
-  <div class="phone">
-    <div class="hdr"><span class="wm">cone</span><img src="icons/paw-print.svg" alt=""></div>
-    <h4>Find care nearby</h4>
-    <div class="loc"><img src="icons/search.svg" alt=""> San Francisco, CA</div>
-    <div class="card hl">
-      <div class="row"><div class="sym"><img src="icons/house-plus.svg" alt=""></div><div><p>Example clinic A</p><p class="meta">0.4 mi · Open now · ★ 4.7</p></div></div>
-      <hr><div class="pr"><div><p class="p1">Wellness exam</p><p class="p2">Receipt-backed price</p></div><p class="amt">$—</p></div>
-    </div>
-    <div class="card">
-      <div class="row"><div class="sym"><img src="icons/house-plus.svg" alt=""></div><div><p>Example clinic B</p><p class="meta">1.1 mi · Open now · ★ 4.5</p></div></div>
-      <hr><div class="pr"><div><p class="p1">Wellness exam</p><p class="p2">Receipt-backed price</p></div><p class="amt">$—</p></div>
-    </div>
-    <p class="fine">Illustrative preview · Example clinics only</p>
-  </div>
+  <img class="search-screenshot" src="mapvet.svg" alt="Cone's map view, showing nearby vets as numbered pins with a search bar above">
   <div class="feat-copy">
     <h2>Search</h2>
     <p>Nearby clinics, hours, ratings, and prices — all in one place.</p>
