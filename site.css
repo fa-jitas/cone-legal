@@ -39,8 +39,8 @@ a{ color:inherit; }
 /* Pills / badges */
 .pill{ display:inline-flex; align-items:center; gap:8px; background:var(--tint); color:var(--purple-dark);
   border-radius:999px; padding:8px 12px; font-size:12px; }
-.badge{ display:inline-flex; align-items:center; gap:8px; background:var(--surface-muted); color:var(--ink-muted);
-  border-radius:999px; padding:12px 16px; font-size:12px; }
+.badge{ display:inline-flex; align-items:center; gap:8px; color:var(--ink-muted);
+  padding:12px 16px; font-size:12px; }
 
 /* Layout helpers */
 .section{ padding:88px 80px; }
@@ -73,10 +73,10 @@ footer.site-footer .tagline{ color:rgba(255,255,255,.72); font-size:13px; }
 footer.site-footer .footer-links{ display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
 footer.site-footer .footer-links a{ font-size:14px; text-decoration:none; color:rgba(255,255,255,.85); }
 footer.site-footer .footer-links a.active{ color:#fff; font-weight:600; }
-/* The "Coming soon" badge needs its own on-purple styling — the
-   default surface-muted/ink-muted pairing used on a cream background
-   would be unreadably low-contrast here. */
-footer.site-footer .footer-links .badge{ background:rgba(255,255,255,.14); color:#fff; }
+/* The "Coming soon" badge needs its own on-purple text color — the
+   default ink-muted used on a cream background would be unreadably
+   low-contrast here. */
+footer.site-footer .footer-links .badge{ color:#fff; }
 footer.site-footer .footer-links .badge img{ filter:brightness(0) invert(1); }
 footer.site-footer .footer-bottom{ border-top:1px solid rgba(255,255,255,.18); padding-top:20px; display:flex; justify-content:space-between;
   flex-wrap:wrap; gap:10px; font-size:12.5px; color:rgba(255,255,255,.68); }
