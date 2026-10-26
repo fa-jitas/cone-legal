@@ -49,6 +49,7 @@
   .price-row .proc{ font-size:12px; color:var(--ink-muted); margin:0; }
   .price-row .note{ font-size:10px; color:var(--purple); margin:3px 0 0; }
   .price-row .amount{ font-size:24px; font-weight:600; margin:0; }
+  .clinic-screenshot{ display:block; width:316px; max-width:100%; margin:0 auto; border-radius:24px; box-shadow:0 12px 32px rgba(53,35,74,.08); }
   .compare-side{ flex:1; min-width:280px; display:flex; flex-direction:column; gap:18px; }
   .compare-top{ display:flex; justify-content:space-between; align-items:center; font-size:12px; }
   .compare-top img{ width:14px; height:14px; }
@@ -134,42 +135,12 @@
   <h2 style="font-size:clamp(28px,4vw,46px); font-weight:400; margin:0 0 42px; line-height:1.15;">Find the right care. Know what to expect.</h2>
   <div class="compare">
     <div class="app-preview">
-      <div class="preview-label"><span>A peek inside cone</span><span class="note">Concept preview · All data is illustrative</span></div>
-      <div class="app-interface">
-        <div style="width:322px; max-width:100%;">
-          <div class="loc-search"><img src="icons/search.svg" alt=""> San Francisco, CA</div>
-          <div class="clinic-card featured">
-            <div class="clinic-row">
-              <div class="sym"><img src="icons/house-plus.svg" alt=""></div>
-              <div><p class="name">Example clinic A</p><p class="meta">0.8 miles away · Hours &amp; ratings</p></div>
-              <img class="chev" src="icons/chevron-right.svg" alt="">
-            </div>
-            <div class="price-row"><div><p class="proc">Wellness exam</p><p class="note">Illustrative price only</p></div><p class="amount">$75</p></div>
-          </div>
-          <div class="clinic-card">
-            <div class="clinic-row">
-              <div class="sym"><img src="icons/house-plus.svg" alt=""></div>
-              <div><p class="name">Example clinic B</p><p class="meta">1.6 miles away · Hours &amp; ratings</p></div>
-              <img class="chev" src="icons/chevron-right.svg" alt="">
-            </div>
-            <div class="price-row"><div><p class="proc">Wellness exam</p><p class="note">Illustrative price only</p></div><p class="amount">$95</p></div>
-          </div>
-        </div>
-        <div class="compare-side">
-          <div class="compare-top"><span>Wellness exam</span><img src="icons/chevron-down.svg" alt=""></div>
-          <div style="border-top:1px solid var(--border);"></div>
-          <div class="insight-box">
-            <img src="icons/receipt.svg" alt="">
-            <p class="t">See what owners paid</p>
-            <p class="d">Paid prices for common procedures, together in one place.</p>
-          </div>
-          <p class="fineprint">Example clinics and prices are not real or verified. Final app may differ.</p>
-        </div>
-      </div>
+      <div class="preview-label"><span>A peek inside cone</span><span class="note">Example clinic · Illustrative only</span></div>
+      <img class="clinic-screenshot" src="clinic-listing.jpg" alt="Cone's clinic page for an example clinic, Maple Grove Animal Hospital, showing its hours, directions, and estimated service prices for a wellness exam, vaccines, and spay, including a price range">
     </div>
     <div class="features">
       <div class="feature"><div class="sym"><img src="icons/map-pin.svg" alt=""></div><div><h3>Good care, close to home</h3><p>Compare nearby clinics, opening hours and ratings without hopping between tabs.</p></div></div>
-      <div class="feature"><div class="sym"><img src="icons/receipt.svg" alt=""></div><div><h3>Real prices, not estimates</h3><p>See what pet owners paid for common procedures — from actual receipts, reviewed before public display.</p></div></div>
+      <div class="feature"><div class="sym"><img src="icons/receipt.svg" alt=""></div><div><h3>Estimated service prices</h3><p>See estimated prices for common procedures, based on information from other pet owners and veterinary clinics. Some are shown as ranges, and final costs may vary.</p></div></div>
       <div class="feature"><div class="sym"><img src="icons/sliders.svg" alt=""></div><div><h3>A more informed next step</h3><p>Find care that fits your budget. Confirm current pricing and your pet's needs with the clinic.</p></div></div>
     </div>
   </div>
