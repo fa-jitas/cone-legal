@@ -61,6 +61,8 @@
   .team-photo{ background:var(--tint); border:1px solid var(--border); height:340px; display:flex; flex-direction:column;
     justify-content:space-between; padding:22px; border-radius:4px; }
   .team-photo img.icon{ width:24px; height:24px; opacity:.6; }
+  .team-photo.has-photo{ padding:0; overflow:hidden; }
+  .team-photo.has-photo img.portrait{ width:100%; height:100%; object-fit:cover; object-position:50% 25%; display:block; }
   .team-photo .rule{ width:40px; height:1px; background:var(--purple); margin-bottom:10px; }
   .team-photo .label{ color:var(--purple); font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
   .team-role{ color:var(--ink-muted); font-size:14px; }
@@ -160,9 +162,8 @@
   </div>
   <div class="team-grid reveal">
     <div class="team-member">
-      <div class="team-photo">
-        <img class="icon" src="icons/image-placeholder.svg" alt="">
-        <div><div class="rule"></div><span class="label">Image placeholder</span></div>
+      <div class="team-photo has-photo">
+        <img class="portrait" src="founder.jpg" alt="Founder of Cone">
       </div>
       <span class="team-role">Founder</span>
     </div>
